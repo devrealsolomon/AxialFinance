@@ -1,9 +1,9 @@
 /**
- * #MAMATOKEN
+ * #AXIALFINANCE
 
-   - 4% of every transaction is redistributed to all holders
-   - 2% of every transaction automatically add to the liquidity pool to locked forever when selling
-   - 2% of every transaction is burned
+   - 2% of every transaction is redistributed to all holders
+   - 3% of every transaction automatically add to the liquidity pool to locked forever when selling
+   - 1% of every transaction is burned
    - 4% of every transaction is converted to BNB and sent to the charity wallet
    - 1% of every transaction is converted to BNB and sent to the dev wallet address
    - 1% maximum for sell from total supply
@@ -780,7 +780,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-contract MAMATOKEN is Context, IERC20, Ownable {
+contract AXIALFINANCE is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -801,11 +801,11 @@ contract MAMATOKEN is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "Mamatoken";
-    string private _symbol = "MAMA";
-    uint8 private _decimals = 9;
+    string private _name = "Axial Finance";
+    string private _symbol = "AXL";
+    uint8 private _decimals = 18;
 
-    uint256 public _taxFee = 4;
+    uint256 public _taxFee = 2;
     uint256 private _previousTaxFee = _taxFee;
 
     uint256 public _charityFee = 4;
@@ -814,7 +814,7 @@ contract MAMATOKEN is Context, IERC20, Ownable {
     uint256 public _devFee = 1;
     uint256 private _previousDevFee = _devFee;
 
-    uint256 public _liquidityFee = 2;
+    uint256 public _liquidityFee = 3;
     uint256 private _previousLiquidityFee = _liquidityFee;
     
     uint256 public _burnFee = 2;
